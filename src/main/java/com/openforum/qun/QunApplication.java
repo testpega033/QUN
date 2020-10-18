@@ -3,7 +3,7 @@ package com.openforum.qun;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.openforum.qun"})
 public class QunApplication {
 
 	public static void main(String[] args) {
