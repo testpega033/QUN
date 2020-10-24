@@ -6,50 +6,51 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "Answers")
+@Table(name="Questions")
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Answers {
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+public class Questions {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ans_id;
-    private String ans;
+    private int qn_id;
+    private String qn;
     @Type(type = "pg-uuid")
-    private UUID ans_uuid=UUID.randomUUID();
+    private UUID qn_uuid= UUID.randomUUID();
     @CreationTimestamp
     private OffsetDateTime createdatetime;
     @UpdateTimestamp
     private OffsetDateTime updatedatetime;
 
-    public int getAns_id() {
-        return ans_id;
+    public int getQn_id() {
+        return qn_id;
     }
 
-    public void setAns_id(int ans_id) {
-        this.ans_id = ans_id;
+    public void setQn_id(int qn_id) {
+        this.qn_id = qn_id;
     }
 
-    public String getAns() {
-        return ans;
+    public String getQn() {
+        return qn;
     }
 
-    public void setAns(String ans) {
-        this.ans = ans;
+    public void setQn(String qn) {
+        this.qn = qn;
     }
 
-    public UUID getAns_uuid() {
-        return ans_uuid;
+    public UUID getQn_uuid() {
+        return qn_uuid;
     }
 
-    public void setAns_uuid(UUID ans_uuid) {
-        this.ans_uuid = ans_uuid;
+    public void setQn_uuid(UUID qn_uuid) {
+        this.qn_uuid = qn_uuid;
     }
 
     public OffsetDateTime getCreatedatetime() {
@@ -57,7 +58,7 @@ public class Answers {
     }
 
     public void setCreatedatetime(OffsetDateTime createdatetime) {
-        this.createdatetime = OffsetDateTime.now();
+        this.createdatetime = createdatetime;
     }
 
     public OffsetDateTime getUpdatedatetime() {
@@ -65,6 +66,6 @@ public class Answers {
     }
 
     public void setUpdatedatetime(OffsetDateTime updatedatetime) {
-        this.updatedatetime = OffsetDateTime.now();
+        this.updatedatetime = updatedatetime;
     }
 }
