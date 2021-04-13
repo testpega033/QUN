@@ -28,6 +28,18 @@ public class Answers {
     @UpdateTimestamp
     private OffsetDateTime updatedatetime;
 
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name="ans_id", nullable = false)
+    private Upvotes upvotes;
+
+    public Upvotes getUpvotes() {
+        return upvotes;
+    }
+
+    public void setUpvotes(Upvotes upvotes) {
+        this.upvotes = upvotes;
+    }
+
     public int getAns_id() {
         return ans_id;
     }
